@@ -60,7 +60,5 @@ exports[`TreeNode Renders 1`] = `
 
 <li
   class="emotion-0"
->
-  test
-</li>
+/>
 `;

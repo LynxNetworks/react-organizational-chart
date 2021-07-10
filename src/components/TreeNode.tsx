@@ -7,6 +7,7 @@ export interface TreeNodeProps {
    * The node label
    * */
   label: React.ReactNode;
+  placeholder?: boolean;
   className?: string;
   children?: ReactNode;
 }
@@ -84,9 +85,57 @@ const nodeLines = css`
   }
 `;
 
-function TreeNode({ children, label, className }: TreeNodeProps) {
+const nodeLinesHolder = css`
+  ::before,
+  ::after {
+    ${verticalLine};
+    right: 50%;
+    width: 50%;
+    border-top: var(--tree-line-width) solid var(--tree-line-color-placeholder);
+  }
+  ::after {
+    left: 50%;
+    border-left: var(--tree-line-width) solid var(--tree-line-color-placeholder);
+  }
+
+  :only-of-type {
+    padding: 0;
+    ::after,
+    :before {
+      display: none;
+    }
+  }
+
+  :first-of-type {
+    ::before {
+      border: 0 none;
+    }
+    ::after {
+      border-radius: var(--tree-line-border-radius) 0 0 0;
+    }
+  }
+
+  :last-of-type {
+    ::before {
+      border-right: var(--tree-line-width) solid
+        var(--tree-line-color-placeholder);
+      border-radius: 0 var(--tree-line-border-radius) 0 0;
+    }
+    ::after {
+      border: 0 none;
+    }
+  }
+`;
+
+function TreeNode({ children, label, placeholder, className }: TreeNodeProps) {
   return (
-    <li className={cx(node, nodeLines, className)}>
+    <li
+      className={
+        placeholder
+          ? cx(node, nodeLinesHolder, className)
+          : cx(node, nodeLines, className)
+      }
+    >
       {label}
       {React.Children.count(children) > 0 && (
         <ul className={childrenContainer}>{children}</ul>

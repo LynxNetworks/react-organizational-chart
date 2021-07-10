@@ -5,7 +5,10 @@
   "author": "daniel-hauser",
   "license": "MIT",
   "homepage": "https://daniel-hauser.github.io/react-organizational-chart",
-  "repository": "daniel-hauser/react-organizational-chart",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-hauser/react-organizational-chart.git"
+  },
   "main": "dist/index.js",
   "source": "src/index.tsx",
   "module": "dist/index.module.js",
@@ -41,7 +44,7 @@
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
     "@testing-library/react": "^11.2.7",
-    "@types/jest": "^25.1.1",
+    "@types/jest": "^25.2.3",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "gh-pages": "^2.2.0",
@@ -53,7 +56,8 @@
     "pretty-quick": "^2.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "typescript": "^3.9.9"
+    "ts-jest": "^27.0.3",
+    "typescript": "^3.9.10"
   },
   "babel": {
     "presets": [
@@ -84,5 +88,8 @@
   ],
   "files": [
     "dist"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/daniel-hauser/react-organizational-chart/issues"
+  }
 }

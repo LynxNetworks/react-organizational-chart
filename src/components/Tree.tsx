@@ -21,6 +21,10 @@ export interface TreeProps {
    */
   lineColor?: string;
   /**
+   * The color of placeholder lines
+   */
+  lineColorPlaceholder?: string;
+  /**
    * The border radius of the line
    */
   lineBorderRadius?: string;
@@ -40,6 +44,7 @@ function Tree({
   lineHeight = '20px',
   lineWidth = '1px',
   lineColor = 'black',
+  lineColorPlaceholder = 'blue',
   nodePadding = '5px',
   lineBorderRadius = '5px',
 }: TreeProps) {
@@ -53,12 +58,14 @@ function Tree({
         --line-height: ${lineHeight};
         --line-width: ${lineWidth};
         --line-color: ${lineColor};
+        --line-color-placeholder: ${lineColorPlaceholder};
         --line-border-radius: ${lineBorderRadius};
         --node-padding: ${nodePadding};
 
         --tree-line-height: var(--line-height, 20px);
         --tree-line-width: var(--line-width, 1px);
         --tree-line-color: var(--line-color, black);
+        --tree-line-color-placeholder: var(--line-color-placeholder, blue);
         --tree-line-border-radius: var(--line-border-radius, 5px);
         --tree-node-padding: var(--node-padding, 5px);
       `}

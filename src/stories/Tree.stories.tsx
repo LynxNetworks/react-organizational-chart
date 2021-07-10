@@ -10,6 +10,7 @@ export default {
   argTypes: {
     label: { control: 'string' },
     lineColor: { control: 'color' },
+    lineColorPlaceholder: { control: 'color' },
   },
 } as Meta;
 
@@ -28,6 +29,7 @@ Styled.args = {
   label: 'Root',
   lineWidth: '3px',
   lineColor: 'green',
+  lineColorPlaceholder: 'grey',
   lineBorderRadius: '10px',
   lineHeight: '30px',
 };
@@ -66,8 +68,8 @@ function getNodes(Label: React.ElementType = 'div') {
     </TreeNode>,
     <TreeNode label={<Label>Child 2</Label>}>
       <TreeNode label={<Label>Grand Child</Label>}>
-        <TreeNode label={<Label>Great Grand Child 1</Label>} />
-        <TreeNode label={<Label>Great Grand Child 2</Label>} />
+        <TreeNode placeholder label={<Label>Great Grand Child 1</Label>} />
+        <TreeNode placeholder label={<Label>Great Grand Child 2</Label>} />
       </TreeNode>
     </TreeNode>,
     <TreeNode label={<Label>Child 3</Label>}>
